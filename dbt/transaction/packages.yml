@@ -1,3 +1,4 @@
 packages:
   - local: ../product
   - local: ../customer
+  - local: ../common

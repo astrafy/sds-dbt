@@ -17,11 +17,26 @@ clean-targets: # folders to be removed by `dbt clean`
   - "dbt_packages"
   - "logs"
 
+require-dbt-version: [">=1.9.0", "<2.0.0"]
+
+flags:
+  partial_parse: true
+  use_colors: true
+  printer_width: 80
+  send_anonymous_usage_stats: false
+  require_explicit_package_overrides_for_builtin_materializations: false
+
+query-comment:
+  comment: "{{ common.query_comment(node) }}"
+  job-label: True
+
 vars:
   source_db_main: "prj-data-fulll-lz-dev-1c8b"
 
 models:
   product:
+    +docs:
+      node_color: "#fc03be"
     +persist_docs:
       relation: true
       columns: true
