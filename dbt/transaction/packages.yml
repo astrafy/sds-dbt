@@ -1,0 +1,3 @@
+packages:
+  - local: ../product
+  - local: ../customer

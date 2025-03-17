@@ -1,0 +1,4 @@
+packages:
+  - local: ../product
+  - local: ../customer 
+  - local: ../transaction 

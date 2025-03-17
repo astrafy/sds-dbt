@@ -1,0 +1,17 @@
+name: "all"
+version: "1.0.1"
+config-version: 2
+
+profile: "fulll-dbt-profile"
+
+clean-targets: # folders to be removed by `dbt clean`
+  - "target"
+  - "dbt_packages"
+  - "logs"
+
+model-paths: ["models"]
+analysis-paths: ["analysis"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]

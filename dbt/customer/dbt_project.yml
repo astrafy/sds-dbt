@@ -1,0 +1,25 @@
+name: 'customer'
+version: '1.0.1'
+
+profile: 'fulll-dbt-profile'
+
+model-paths: ["models"]
+analysis-paths: ["analysis"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+docs-paths: ["docs"]
+
+vars:
+  source_db_main: "prj-data-fulll-data-dev-bf85"
+  
+
+models:
+  customer:
+    +persist_docs:
+      relation: true
+      columns: true
+    +tags: customer
+    materialized: table
+    

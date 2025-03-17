@@ -1,0 +1,40 @@
+name: "product"
+version: "1.0.1"
+config-version: 2
+
+profile: "fulll-dbt-profile"
+
+model-paths: ["models"]
+analysis-paths: ["analysis"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+docs-paths: ["docs"]
+
+clean-targets: # folders to be removed by `dbt clean`
+  - "target"
+  - "dbt_packages"
+  - "logs"
+
+vars:
+  source_db_main: "prj-data-fulll-data-dev-bf85"
+
+models:
+  product:
+    +persist_docs:
+      relation: true
+      columns: true
+    
+    +tags: product
+    +incremental_strategy: "insert_overwrite"
+    +materialized: "incremental"
+    staging:
+      +schema: company_stg_product
+      +tags: stg_product
+    intermediate:
+      +schema: company_int_product
+      +tags: int_product
+    marts:
+      +schema: company_dm_product
+      +tags: mart_product

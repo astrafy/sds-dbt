@@ -1,0 +1,25 @@
+options:
+  logging: CLOUD_LOGGING_ONLY
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: [ 'build',
+          '--build-arg',
+          'PACKAGE=$_PACKAGE', #Needed for the docker image
+          '-t', 'europe-west1-docker.pkg.dev/prj-astrafy-main-courses/dbt-training/$_COMPANY_NAME/$_PACKAGE',
+          '.' ]
+  
+# Add a tag with VERSION
+- name: 'gcr.io/cloud-builders/docker'
+  entrypoint: 'bash'
+  args:
+  - '-c'
+  - |
+    docker tag europe-west1-docker.pkg.dev/prj-astrafy-main-courses/dbt-training/$_COMPANY_NAME/$_PACKAGE europe-west1-docker.pkg.dev/prj-astrafy-main-courses/dbt-training/$_COMPANY_NAME/$_PACKAGE:$_VERSION
+
+
+timeout: 3000s
+# Container registry location
+images:
+- 'europe-west1-docker.pkg.dev/prj-astrafy-main-courses/dbt-training/$_COMPANY_NAME/$_PACKAGE:$_VERSION'
+
+

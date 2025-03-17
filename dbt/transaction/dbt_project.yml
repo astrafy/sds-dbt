@@ -1,0 +1,47 @@
+name: "transaction"
+version: "1.0.1"
+config-version: 2
+
+profile: "fulll-dbt-profile"
+
+clean-targets: # folders to be removed by `dbt clean`
+  - "target"
+  - "dbt_packages"
+  - "logs"
+
+model-paths: ["models"]
+analysis-paths: ["analysis"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+docs-paths: ["docs"]
+
+vars:
+  source_db_main: "prj-data-fulll-data-dev-bf85"
+
+models:
+  transaction:
+    +persist_docs:
+      relation: true
+      columns: true
+    +tags: transaction
+    +incremental_strategy: "insert_overwrite"
+    +materialized: "incremental"
+    
+    staging:
+      +schema: company_stg_transaction
+      +tags: stg_transaction
+    intermediate:
+      +schema: company_int_transaction
+      +tags: int_transaction
+    marts:
+      +schema: company_dm_transaction
+      +tags: mart_transaction
+seeds:
+  transaction:
+    +schema: company_stg_mapping_transaction
+    +tags: transaction_seed
+    +persist_docs:
+      relation: true
+      columns: true

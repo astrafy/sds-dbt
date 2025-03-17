@@ -1,0 +1,26 @@
+[project]
+name = "dbt-training-project-fulll-repo"
+version = "0.1.0"
+description = "\"The best way to learn dbt and why not Airflow as well\""
+authors = [
+    {name = "\"Andrea Bombino\""}
+]
+readme = "README.md"
+requires-python = ">=3.9.0,<3.11"
+
+[tool.poetry.dependencies]
+python = ">=3.9.0,<3.11"
+dbt-core = "1.9.3"
+dbt-bigquery= "1.9.1"
+google-cloud-storage="3.1.0"
+oogle-cloud-bigquery="3.30.0"
+google-api-python-client="2.164.0"
+google-auth="2.38.0"
+google-cloud-core = "2.4.3"
+sqlfluff-templater-dbt="3.3.1"
+diff-cover="9.2.4"
+google-api-python-client = "2.164.0"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"

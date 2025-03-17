@@ -1,0 +1,39 @@
+fulll-dbt-profile:
+  target: sbx
+  outputs:
+    sbx:
+      type: bigquery
+      method: oauth
+      project: prj-data-fulll-lz-dev-1c8b
+      execution_project: prj-astrafy-main-courses
+      schema: bqdts_{{ env_var('USER', 'default') | replace('-', '_') }}
+      threads: 12
+      timeout_seconds: 300
+      location: EU
+      priority: interactive
+      retries: 1
+      impersonate_service_account: sa-dbt-fulll-dev@prj-astrafy-main-courses.iam.gserviceaccount.com
+    dev:
+      type: bigquery
+      method: oauth
+      project: prj-data-fulll-lz-dev-1c8b
+      execution_project: prj-astrafy-main-courses
+      schema: bqdts
+      threads: 12
+      timeout_seconds: 300
+      location: EU
+      priority: interactive
+      retries: 1
+      impersonate_service_account: sa-dbt-fulll-dev@prj-astrafy-main-courses.iam.gserviceaccount.com
+    prd:
+      type: bigquery
+      method: oauth
+      project: prj-data-fulll-lz-prd-df5b
+      execution_project: prj-astrafy-main-courses
+      schema: bqdts
+      threads: 12
+      timeout_seconds: 300
+      location: EU
+      priority: interactive
+      retries: 1
+      impersonate_service_account: sa-dbt-fulll-prd@prj-astrafy-main-courses.iam.gserviceaccount.com
