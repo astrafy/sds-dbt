@@ -16,6 +16,7 @@ Follow the steps below to set up your environment:
 2. **Activate the Virtual Environment**
    ```bash
    pyenv activate dbt-training
+   pyenv local dbt-training
    ```
 3. **Install Poetry**
    ```bash
@@ -31,7 +32,7 @@ Follow the steps below to set up your environment:
    ```
    - When prompted, select **Create a new Configuration**.
    - Enter a configuration name, for example: **astrafy-dbt-training**.
-   - Follow the prompts to choose your email and enter the project ID (use the project ID provided in the slide).
+   - Follow the prompts to choose your email and enter the project ID `prj-astrafy-main-courses`.
 
 6. **Activate the gcloud Configuration**
    ```bash
