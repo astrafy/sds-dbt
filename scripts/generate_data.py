@@ -13,11 +13,11 @@ class BigQueryClient:
 
     CONFIG = {
         "dev": {
-            "BQ_PROJECT": "prj-data-fulll-data-dev-bf85",
+            "BQ_PROJECT": "prj-data-fulll-lz-dev-1c8b",
             "SERVICE_ACCOUNT": "sa-dbt-fulll-dev@prj-astrafy-main-courses.iam.gserviceaccount.com",
         },
         "prd": {
-            "BQ_PROJECT": "prj-data-fulll-data-prd-f6de",
+            "BQ_PROJECT": "prj-data-fulll-lz-dev-1c8b",
             "SERVICE_ACCOUNT": "sa-dbt-fulll-prd@prj-astrafy-main-courses.iam.gserviceaccount.com",
         },
     }

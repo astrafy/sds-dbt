@@ -18,7 +18,7 @@ snapshot-paths: ["snapshots"]
 docs-paths: ["docs"]
 
 vars:
-  source_db_main: "prj-data-fulll-data-dev-bf85"
+  source_db_main: "prj-data-fulll-lz-dev-1c8b"
 
 models:
   transaction:

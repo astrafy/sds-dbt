@@ -4,7 +4,7 @@ fulll-dbt-profile:
     sbx:
       type: bigquery
       method: oauth
-      project: prj-data-fulll-lz-dev-1c8b
+      project: prj-data-fulll-data-dev-bf85
       execution_project: prj-astrafy-main-courses
       schema: bqdts_{{ env_var('USER', 'default') | replace('-', '_') }}
       threads: 12
@@ -16,7 +16,7 @@ fulll-dbt-profile:
     dev:
       type: bigquery
       method: oauth
-      project: prj-data-fulll-lz-dev-1c8b
+      project: prj-data-fulll-data-dev-bf85
       execution_project: prj-astrafy-main-courses
       schema: bqdts
       threads: 12
@@ -28,7 +28,7 @@ fulll-dbt-profile:
     prd:
       type: bigquery
       method: oauth
-      project: prj-data-fulll-lz-prd-df5b
+      project: prj-data-fulll-data-prd-f6de
       execution_project: prj-astrafy-main-courses
       schema: bqdts
       threads: 12

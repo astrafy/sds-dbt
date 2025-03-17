@@ -18,7 +18,7 @@ clean-targets: # folders to be removed by `dbt clean`
   - "logs"
 
 vars:
-  source_db_main: "prj-data-fulll-data-dev-bf85"
+  source_db_main: "prj-data-fulll-lz-dev-1c8b"
 
 models:
   product:

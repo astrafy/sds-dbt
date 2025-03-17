@@ -6,20 +6,22 @@ authors = [
     {name = "\"Andrea Bombino\""}
 ]
 readme = "README.md"
-requires-python = ">=3.9.0,<3.11"
+requires-python = ">=3.9.17,<4.0"
+
+[tool.poetry]
+package-mode = false
 
 [tool.poetry.dependencies]
-python = ">=3.9.0,<3.11"
+python = ">=3.9.17,<4.0"
 dbt-core = "1.9.3"
 dbt-bigquery= "1.9.1"
-google-cloud-storage="3.1.0"
-oogle-cloud-bigquery="3.30.0"
+google-cloud-storage="2.19.0"
+google-cloud-bigquery="3.30.0"
 google-api-python-client="2.164.0"
 google-auth="2.38.0"
 google-cloud-core = "2.4.3"
 sqlfluff-templater-dbt="3.3.1"
 diff-cover="9.2.4"
-google-api-python-client = "2.164.0"
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]

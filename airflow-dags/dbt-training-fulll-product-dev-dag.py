@@ -111,7 +111,7 @@ with DAG(
             load_data_product = generate_and_load(rows, bq_project,bq_dataset,data_product)
             print(f"Function result: {load_data_product}")
             return load_data_product
-        data_ingestion(50,"prj-data-fulll-data-dev-bf85","bqdts_company_lz","product")
+        data_ingestion(50,"prj-data-fulll-lz-dev-1c8b","bqdts_company_lz","product")
     with TaskGroup(group_id="Transformations") as Transformations:
         dbt_run_stg_product = gke_bash(dag, 
                                         "dbt_run_stg_product", 

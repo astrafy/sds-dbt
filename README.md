@@ -102,17 +102,17 @@ In order to build manually docker images for tdbt projects, users need to run fr
 at the root of the repository:
 ```bash
 
-gcloud builds submit \   
+gcloud builds submit . \
   --config cloudbuild.yaml \
   --region=europe-west1 \
   --project prj-astrafy-main-courses \
-  --service-account projects/prj-astrafy-artifacts/serviceAccounts/$SA_CLOUD_BUILD \
+  --service-account projects/prj-astrafy-main-courses/serviceAccounts/$SA_CLOUD_BUILD \
   --substitutions=_PACKAGE=<PACKAGE_NAME>,_COMPANY_NAME=$COMPANY_NAME,_VERSION=<VERSION>
 
 
 EXAMPLE
 
-gcloud builds submit \ 
+gcloud builds submit . \
   --config cloudbuild.yaml \
   --region=europe-west1 \
   --project prj-astrafy-main-courses \
