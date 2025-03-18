@@ -37,3 +37,22 @@ fulll-dbt-profile:
       priority: interactive
       retries: 1
       impersonate_service_account: sa-dbt-fulll-prd@prj-astrafy-main-courses.iam.gserviceaccount.com
+
+elementary:
+  target: default
+  outputs:
+    default:
+      type: bigquery
+
+      ## Service account auth ##
+      method: oauth
+      impersonate_service_account: sa-dbt-fulll-dev@prj-astrafy-main-courses.iam.gserviceaccount.com
+
+      project: prj-data-fulll-data-dev-bf85
+      execution_project: prj-astrafy-main-courses
+      dataset: bqdts_elementary
+      threads: 12
+      timeout_seconds: 300
+      location: EU
+      priority: interactive
+      retries: 1

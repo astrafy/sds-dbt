@@ -1,14 +1,10 @@
-[project]
-name = "dbt-training-project-fulll-repo"
+[tool.poetry]
+name = "{{ cookiecutter.repo_name }}"
 version = "0.1.0"
 description = "\"The best way to learn dbt and why not Airflow as well\""
-authors = [
-    {name = "\"Andrea Bombino\""}
-]
+authors = [ "\"Andrea Bombino\""]
 readme = "README.md"
-requires-python = ">=3.9.17,<4.0"
 
-[tool.poetry]
 package-mode = false
 
 [tool.poetry.dependencies]
@@ -21,7 +17,9 @@ google-api-python-client="2.164.0"
 google-auth="2.38.0"
 google-cloud-core = "2.4.3"
 sqlfluff-templater-dbt="3.3.1"
+google-crc32c = "1.6.0"
 diff-cover="9.2.4"
+elementary-data="0.17.0"
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
