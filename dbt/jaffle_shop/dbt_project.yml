@@ -34,7 +34,7 @@ vars:
   
 
 models:
-  customer:
+  jaffle_shop:
     +docs:
       node_color: "#039dfc"
     +persist_docs:
