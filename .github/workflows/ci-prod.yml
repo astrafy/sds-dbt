@@ -1,4 +1,4 @@
-name: ci-dev
+name: ci-prod
 
 on:
   push:
@@ -39,7 +39,7 @@ jobs:
       - name: Run dbt deps
         run: dbt compile --target prd --project-dir dbt/jaffle_shop
 
-        
+
   build-and-push:
     runs-on: ubuntu-latest
     permissions:
