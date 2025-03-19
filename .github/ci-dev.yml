@@ -1,4 +1,4 @@
-name: pre-commit-check
+name: ci-dev
 
 on:
   push:
@@ -15,6 +15,9 @@ jobs:
     permissions:
       contents: read
       id-token: write
+
+    env:
+      PACKAGE: jaffle_shop
 
     steps:
       - name: Checkout repository
@@ -40,9 +43,9 @@ jobs:
           context: .
           push: ${{ github.event_name != 'pull_request' }}
           tags: |
-            europe-west1-docker.pkg.dev/prj-astrafy-artifacts/dbt-fulll:${{ github.ref_name }}
+            europe-west1-docker.pkg.dev/prj-astrafy-artifacts/dbt-training/fulll/${{ env.PACKAGE }}:${{ github.ref_name }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
           build-args: |
-            PACKAGE=jaffle_shop
+            PACKAGE=${{ env.PACKAGE }}
 
