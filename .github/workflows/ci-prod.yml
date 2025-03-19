@@ -42,7 +42,7 @@ jobs:
           context: .
           push: true
           tags: |
-            europe-west1-docker.pkg.dev/prj-astrafy-artifacts/dbt-training/fulll/${{ env.PACKAGE }}:${{ github.ref_name }}
+            europe-west1-docker.pkg.dev/prj-astrafy-main-courses/dbt-training/fulll/${{ env.PACKAGE }}:${{ github.ref_name }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
           build-args: |
