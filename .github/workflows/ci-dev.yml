@@ -34,6 +34,9 @@ jobs:
           pip install -r docker_requirement.txt
 
       - name: Run dbt deps
+        run: dbt deps --project-dir dbt/jaffle_shop
+        
+      - name: Run dbt deps
         run: dbt compile --target dev --project-dir dbt/jaffle_shop
 
 
