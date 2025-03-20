@@ -1,4 +1,4 @@
 packages:
+  - local: ../jaffle_shop
   - local: ../product
-  - local: ../customer
   - local: ../common
