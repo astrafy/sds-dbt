@@ -112,6 +112,7 @@
 - Learn GitOps workflow to trigger CI pipeline
 - DataOps introduction with a simple CI pipeline that compiles dbt code and pushes a Docker image
 - Data Mesh demo with multiple dbt projects within the same repository
+- dbt semantic layer 
 
 ### Exercises instructions
 
@@ -120,6 +121,7 @@
 - Dataops
 	- check model with SQLFluff
 	- dbt-checkpoint
+- Semantic layer definitions and testing with metricflow
 
 </details>
 

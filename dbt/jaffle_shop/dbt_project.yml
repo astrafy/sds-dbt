@@ -43,10 +43,13 @@ models:
     +tags: jaffle_shop
     staging:
       +materialized: table
+      +tags: stg_jaffle_shop
     intermediate:
       +materialized: table
+      +tags: int_jaffle_shop
     datamart:
       +materialized: table
+      +tags: datamart_jaffle_shop
 
 seeds:
   jaffle_shop:
