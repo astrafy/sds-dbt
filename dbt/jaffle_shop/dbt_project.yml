@@ -1,4 +1,4 @@
-name: 'customer'
+name: 'jaffle_shop'
 version: '1.0.1'
 
 profile: 'fulll-dbt-profile'
@@ -31,7 +31,7 @@ query-comment:
 
 vars:
   source_db_main: "prj-data-fulll-lz-dev-1c8b"
-  
+  "dbt_date:time_zone": "Europe/Paris"
 
 models:
   jaffle_shop:
@@ -40,6 +40,18 @@ models:
     +persist_docs:
       relation: true
       columns: true
-    +tags: customer
-    materialized: table
-    
+    +tags: jaffle_shop
+    staging:
+      +materialized: table
+    intermediate:
+      +materialized: table
+    datamart:
+      +materialized: table
+
+seeds:
+  jaffle_shop:
+    +schema: js_mapping
+    +tags: jaffle_shop_seed
+    +persist_docs:
+      relation: true
+      columns: true

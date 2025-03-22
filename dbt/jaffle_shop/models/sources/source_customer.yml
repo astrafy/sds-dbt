@@ -1,8 +1,0 @@
-version: 2
-sources:
-- name: source_customer
-  schema: "bqdts_company_lz"
-  database: "{{ var('source_db_main') }}"
-
-  tables:
-  - name: customers

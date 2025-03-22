@@ -4,10 +4,8 @@
   target_schema=target.schema~"_snapshot",
   unique_key='customer_surrogate_key',
   strategy='check',
-  check_cols=[
-'customer_signup_at'],
-  
+  check_cols=['customer_signup_at'],
 ) }}
 
-SELECT * FROM {{ ref('int__customer') }}
+SELECT * FROM {{ ref('int_customers') }}
 {% endsnapshot %}

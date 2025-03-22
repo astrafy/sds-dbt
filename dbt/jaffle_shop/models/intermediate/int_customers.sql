@@ -8,7 +8,8 @@
       "data_type": "DATE",
       "granularity": "DAY"
       },
-    schema= 'company_int_customer',
+    schema= 'int_customer',
+    alias = 'customer',
     cluster_by = ['customer_surrogate_key'],
     tags=["int_customer"]
 ) }}
@@ -24,7 +25,7 @@ SELECT
         'customer_id',
         'customer_email',
     ]) }}                               AS customer_surrogate_key
-FROM {{ ref('stg__customer') }}
+FROM {{ ref('stg_customers') }}
 {% if is_incremental() %}
 -- Only process records modified since the last run during incremental runs
 WHERE customer_signup_at > (SELECT MAX(customer_signup_at) FROM {{ this }})

@@ -20,6 +20,7 @@ sqlfluff-templater-dbt="3.3.1"
 google-crc32c = "1.6.0"
 diff-cover="9.2.4"
 elementary-data="0.17.0"
+dbt-metricflow="0.8.1"
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]

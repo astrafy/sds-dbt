@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: int_customers
+    description: "This model merges changes from staging customers to maintain the latest data using an incremental merge strategy."
+    columns:
+      - name: customer_id
+        description: "The original customer identifier from the source."
+      - name: customer_name
+        description: "The full name of the customer."
+      - name: customer_email
+        description: "The customer's email address."
+      - name: customer_country_code
+        description: "The country code associated with the customer."
+      - name: customer_signup_at
+        description: "The date when the customer signed up; used for incremental filtering and partitioning."
+      - name: customer_surrogate_key
+        description: "A surrogate key generated using customer_id and customer_email to uniquely identify each customer."
+        tests:
+          - unique
+          - not_null
