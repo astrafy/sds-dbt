@@ -1,10 +1,10 @@
-fulll-dbt-profile:
+sds-dbt-profile:
   target: sbx
   outputs:
     sbx:
       type: bigquery
       method: oauth
-      project: prj-data-fulll-data-dev-bf85
+      project: prj-data-sds-data-dev-7d43
       execution_project: prj-astrafy-main-courses
       schema: bqdts_sbx
       threads: 12
@@ -12,11 +12,11 @@ fulll-dbt-profile:
       location: EU
       priority: interactive
       retries: 1
-      impersonate_service_account: sa-dbt-fulll-dev@prj-astrafy-main-courses.iam.gserviceaccount.com
+      impersonate_service_account: sa-dbt-sds-dev@prj-astrafy-main-courses.iam.gserviceaccount.com
     dev:
       type: bigquery
       method: oauth
-      project: prj-data-fulll-data-dev-bf85
+      project: prj-data-sds-data-dev-7d43
       execution_project: prj-astrafy-main-courses
       schema: bqdts
       threads: 12
@@ -24,11 +24,11 @@ fulll-dbt-profile:
       location: EU
       priority: interactive
       retries: 1
-      impersonate_service_account: sa-dbt-fulll-dev@prj-astrafy-main-courses.iam.gserviceaccount.com
+      impersonate_service_account: sa-dbt-sds-dev@prj-astrafy-main-courses.iam.gserviceaccount.com
     prd:
       type: bigquery
       method: oauth
-      project: prj-data-fulll-data-prd-f6de
+      project: prj-data-sds-data-prd-d3a2
       execution_project: prj-astrafy-main-courses
       schema: bqdts
       threads: 12
@@ -36,7 +36,7 @@ fulll-dbt-profile:
       location: EU
       priority: interactive
       retries: 1
-      impersonate_service_account: sa-dbt-fulll-prd@prj-astrafy-main-courses.iam.gserviceaccount.com
+      impersonate_service_account: sa-dbt-sds-prd@prj-astrafy-main-courses.iam.gserviceaccount.com
 
 elementary:
   target: default
@@ -46,9 +46,9 @@ elementary:
 
       ## Service account auth ##
       method: oauth
-      impersonate_service_account: sa-dbt-fulll-dev@prj-astrafy-main-courses.iam.gserviceaccount.com
+      impersonate_service_account: sa-dbt-sds-dev@prj-astrafy-main-courses.iam.gserviceaccount.com
 
-      project: prj-data-fulll-data-dev-bf85
+      project: prj-data-sds-data-dev-7d43
       execution_project: prj-astrafy-main-courses
       dataset: bqdts_elementary
       threads: 12

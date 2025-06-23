@@ -9,10 +9,10 @@ class BigQueryClient:
 
     CONFIG = {
         "dev": {
-            "BQ_PROJECT": "prj-data-fulll-lz-dev-1c8b",
+            "BQ_PROJECT": "prj-data-sds-lz-dev-4542",
         },
         "prd": {
-            "BQ_PROJECT": "prj-data-fulll-lz-prd-df5b",
+            "BQ_PROJECT": "prj-data-sds-lz-prd-411a",
         },
     }
     def __init__(self, environment):
@@ -21,7 +21,7 @@ class BigQueryClient:
 
         self.environment = environment
         self.BQ_PROJECT = self.CONFIG[environment]["BQ_PROJECT"]
-        self.BQ_DATASET = "bqdts_create_table"
+        self.BQ_DATASET = "bqdts_company_lz"
         self.client = self.create_client()
 
     def create_client(self):
@@ -92,6 +92,6 @@ class BigQueryClient:
 
 if __name__ == "__main__":
     # Set environment: "dev" or "prd"
-    ENVIRONMENT = os.getenv("ENVIRONMENT", "dev")  # Default to "dev" if not set
+    ENVIRONMENT = os.getenv("ENVIRONMENT", "prd")  # Default to "dev" if not set
     bq_manager = BigQueryClient(ENVIRONMENT)
     bq_manager.setup_bigquery()
