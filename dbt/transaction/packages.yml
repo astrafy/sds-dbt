@@ -1,4 +1,0 @@
-packages:
-  - local: ../jaffle_shop
-  - local: ../product
-  - local: ../common

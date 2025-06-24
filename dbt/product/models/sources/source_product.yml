@@ -1,8 +1,0 @@
-version: 2
-sources:
-- name: source_product
-  database: "{{ var('source_db_main') }}"
-  schema: "bqdts_company_lz"
-  tables:
-  - name: products
-  

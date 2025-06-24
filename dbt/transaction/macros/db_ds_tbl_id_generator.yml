@@ -1,8 +1,0 @@
-version: 2
-
-macros:
-  - name: generate_alias_name
-    description: >
-      Overwrites the default generate_alias_macro, by using
-      the custom macro that uses the same arguments.
-      Imports from the common package.
