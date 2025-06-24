@@ -3,10 +3,20 @@ FROM python:3.11.9-slim-bookworm
 #Installation of dbt
 RUN apt-get update \
   && apt-get dist-upgrade -y \
-  && apt-get install -y --no-install-recommends
+  && apt-get install -y --no-install-recommends \
+  && apt-get install -y curl 
+
 # Env vars
 ENV PYTHONIOENCODING=utf-8
 ENV LANG=C.UTF-8
+
+# Install gcloud SDK
+RUN curl -sSL https://sdk.cloud.google.com | bash
+
+# Update PATH to include gcloud
+ENV PATH="/root/google-cloud-sdk/bin:$PATH"
+
+
 # Update python
 
 RUN pip install poetry
