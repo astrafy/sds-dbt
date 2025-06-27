@@ -6,9 +6,9 @@
 
     {%- if target.name == 'sbx' and not env_var('NO_PREFIX', false) and not (is_elementary or is_project_evaluator or is_seeds) -%}
         {%- if custom_alias_name is none -%}
-            {{ env_var('USER', 'default') | replace('-', '_') }}_{{ node.name }}
+            {{ env_var('USER', 'default') | replace('-', '_') | replace('.', '_') }}_{{ node.name }}
         {%- else -%}
-            {{ env_var('USER', 'default') | replace('-', '_') }}_{{ custom_alias_name | trim }}
+            {{ env_var('USER', 'default') | replace('-', '_') | replace('.', '_') }}_{{ custom_alias_name | trim }}
         {%- endif -%}
 
     {%- else -%}

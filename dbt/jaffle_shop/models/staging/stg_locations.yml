@@ -33,11 +33,11 @@ unit_tests:
             location_id: 1,
             location_name: "Vice City",
             tax_rate: 0.2,
-            opened_date: "2016-09-01",
+            opened_at: "2016-09-01",
           }
         - {
             location_id: 2,
             location_name: "San Andreas",
             tax_rate: 0.1,
-            opened_date: "2079-10-27",
+            opened_at: "2079-10-27",
           }
